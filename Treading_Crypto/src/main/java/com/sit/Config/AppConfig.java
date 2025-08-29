@@ -15,9 +15,10 @@ public class AppConfig {
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
 		http.sessionManagement(managment ->managment.sessionCreationPolicy(SessionCreationPolicy.STATELESS)).
 		authorizeHttpRequests(Authorizae->Authorizae.requestMatchers("/api/**").authenticated().anyRequest().permitAll())
-				.addFilterBefore(new JWtTokenValidatore(), BasicAuthenticationFilter.class)
+				.addFilterBefore(jwtTokenValidator(), BasicAuthenticationFilter.class)
 				.csrf(csrf->csrf.disable())
 				.cors(cors->cors.ConfigurationSource(corsConfigrationSource()));
+		    
 		
 		return null;
 	}
