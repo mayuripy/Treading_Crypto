@@ -1,31 +1,38 @@
 package com.sit.Config;
 
-
-import jakarta.servlet.Filter;
-import org.apache.tomcat.util.file.ConfigurationSource;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
+import org.springframework.web.cors.CorsConfigurationSource;
 
 @Configuration
 public class AppConfig {
   
-	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
-		http.sessionManagement(managment ->managment.sessionCreationPolicy(SessionCreationPolicy.STATELESS)).
-		authorizeHttpRequests(Authorizae->Authorizae.requestMatchers("/api/**").authenticated().anyRequest().permitAll())
-				.addFilterBefore(jwtTokenValidator(), BasicAuthenticationFilter.class)
-				.csrf(csrf->csrf.disable())
-				.cors(cors->cors.ConfigurationSource(corsConfigrationSource()));
-		    
-		
-		return null;
-	}
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+            .sessionManagement(management -> management.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+            .authorizeHttpRequests(authorize -> authorize
+                .requestMatchers("/api/**").authenticated()
+                .anyRequest().permitAll()
+            )
+            .addFilterBefore(jwtTokenValidator(), BasicAuthenticationFilter.class)
+            .csrf(csrf -> csrf.disable())
+            .cors(cors -> cors.configurationSource(corsConfigrationSource()));
+
+        return http.build();
+    }
 	
-	private ConfigurationSource corsConfigrationSource() {
-		
-		return null;
-	}
-	 
+    private Filter jwtTokenValidator() {
+        // Your JWT filter implementation goes here
+        return null;
+    }
+	
+    private CorsConfigurationSource corsConfigrationSource() {
+        // Your CORS configuration goes here
+        return null;
+    }
 }
