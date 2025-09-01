@@ -1,4 +1,4 @@
-package com.sit.Controller;
+package com.sit.trading.Controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

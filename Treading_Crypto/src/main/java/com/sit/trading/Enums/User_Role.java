@@ -1,4 +1,4 @@
-package com.sit.Enums;
+package com.sit.trading.Enums;
 
 public enum User_Role {
 	 

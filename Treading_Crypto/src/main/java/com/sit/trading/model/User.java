@@ -1,9 +1,9 @@
-package com.sit.model;
+package com.sit.trading.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonFormatTypes;
-import com.sit.Enums.User_Role;
+import com.sit.trading.Enums.User_Role;
 
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;

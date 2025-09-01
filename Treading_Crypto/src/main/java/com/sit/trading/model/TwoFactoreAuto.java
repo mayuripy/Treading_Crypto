@@ -1,6 +1,6 @@
-package com.sit.model;
+package com.sit.trading.model;
 
-import com.sit.Enums.verificationType;
+import com.sit.trading.Enums.verificationType;
 
 import lombok.Data;
 

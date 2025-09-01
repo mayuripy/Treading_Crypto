@@ -1,4 +1,4 @@
-package com.sit;
+package com.sit.trading;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

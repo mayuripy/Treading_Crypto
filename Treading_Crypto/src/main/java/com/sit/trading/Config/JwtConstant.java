@@ -1,4 +1,4 @@
-package com.sit.Config;
+package com.sit.trading.Config;
 
 public class JwtConstant {
 

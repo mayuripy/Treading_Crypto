@@ -1,4 +1,4 @@
-package com.sit;
+package com.sit.trading;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
