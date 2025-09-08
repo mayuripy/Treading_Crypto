@@ -4,6 +4,9 @@ public enum verificationType {
 
 	MOBILE,
 	EMAIL,
+	PHONE,
+	ADDRESS
+	
 	
 	
 }
