@@ -4,17 +4,19 @@ import com.sit.trading.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 import com.sit.homeloan.repository.UserRepository;
-import com.sit.trading.Services.UserDetailsService;
+//import com.sit.trading.Services.UserDetailsService;
 
 
 @Service
-public class CustomeUserDetailsService  implements org.springframework.security.core.userdetails.UserDetailsService{
+public class CustomeUserDetailsService  implements UserDetailsService{
 
 	 @Autowired
 	 private UserRepository userRepository;
 	
+	 
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) {
@@ -22,10 +24,12 @@ public class CustomeUserDetailsService  implements org.springframework.security.
 		Object user= userRepository.findByEmail(username);
 		
 		if(user==null) {
-			
+			 
 		}
 		return null;
 	}
+	
+	
 
 	
 	
