@@ -42,6 +42,7 @@ public class CustomUserDetailsService implements UserDetailsService {
                 user.getEmail(),
                 user.getPassword(),
                 new ArrayList<>()
+                
         );
     }
 }
