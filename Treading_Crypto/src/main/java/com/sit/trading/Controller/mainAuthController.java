@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +19,7 @@ public class mainAuthController {
 	 private UserRepository userRepository;
 	 
 	 @PostMapping("/signUp")
-	 public ResponseEntity<User> register(User user){
+	 public ResponseEntity<User> register(@RequestBody User user){
 		  
 		 User newUser=new User();
 		 newUser.setFullName(user.getFullName());
@@ -28,5 +29,6 @@ public class mainAuthController {
 		 User saveUser=userRepository.save(newUser);
 		  return new ResponseEntity<> (saveUser,HttpStatus.CREATED);	
 		 
+		  
 	 }
 }
