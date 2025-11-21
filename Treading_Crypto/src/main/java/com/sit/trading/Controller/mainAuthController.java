@@ -22,8 +22,8 @@ public class mainAuthController {
 	 public ResponseEntity<User> register(@RequestBody User user){
 		  
 		 User newUser=new User();
-		 newUser.setFullName(user.getFullName());
 		 newUser.setEmail(user.getEmail());
+//		
 		 newUser.setPassword(user.getPassword());
 		 
 		 User saveUser=userRepository.save(newUser);
